@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+
 public class Hilo extends Thread{
 
     public String nombre;
@@ -6,14 +10,26 @@ public class Hilo extends Thread{
         this.nombre=nombre;
     }
 
-    @Override
-    public void run() {
-        System.out.println("Soy el hilo "+nombre+" y me voy a dormir");
+    public static void hiloADormir(Hilo h,Long tiempoDormido) {
         try {
-            Thread.sleep(Main.getRandomTimeinMillis());
+            h.start();
+            //h.run();
+            h.join();
+            //System.out.println("Soy el hilo "+h.getName()+" y me he dormido por milisegundos");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Soy el hilo "+nombre+" y me he despertado");
+    }
+
+    public static HashMap hilosOrdenados(Hilo h,Long tiempoDormido){
+        HashMap<Hilo,Long> HM = new HashMap<Hilo,Long>();
+        HM.put(h,tiempoDormido);
+        return HM;
+    }
+
+    public void run() {
+        long tiempo=System.currentTimeMillis();
+        System.out.println(tiempo);
     }
 }
+
