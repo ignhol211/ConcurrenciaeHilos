@@ -5,6 +5,7 @@ import java.util.Random;
 public class EjercicioHilos1 {
 
     static ArrayList<Hilo> listaHilos = new ArrayList();
+    static ArrayList <Hilo> listaHilosOrdenada = new ArrayList<>();
 
     public static void main(String [] args){
 

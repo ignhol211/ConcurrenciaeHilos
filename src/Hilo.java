@@ -20,6 +20,7 @@ public class Hilo extends Thread{
             e.printStackTrace();
         }
         tiempoFinalizacion=System.currentTimeMillis();
+        EjercicioHilos1.listaHilosOrdenada.add(this);
         long tiempodormido = tiempoFinalizacion - comienzo;
         System.out.println("Soy el hilo nº"+numero+" y he dormido "+tiempodormido);
     }
