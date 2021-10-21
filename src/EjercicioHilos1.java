@@ -12,13 +12,20 @@ public class EjercicioHilos1 {
             Hilo h = new Hilo(i);
             h.start();
             listaHilos.add(h);
+        }
+        for(Hilo h : listaHilos) {
+            try {
+                h.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
+        }
 
         mostrarListado(listaHilos);
 
-        }
-
+    }
     private static void mostrarListado(ArrayList<Hilo> listaHilos){
         for(Hilo hilo : listaHilos)
-            System.out.println("El nombre "+hilo.numero+" ha finalizado en el milisegundo "+hilo.tiempoFinalizacion);}
+            System.out.println("El hilo "+hilo.numero+" ha finalizado en el milisegundo "+hilo.tiempoFinalizacion);
+    }
 }
