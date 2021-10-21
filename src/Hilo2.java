@@ -23,6 +23,6 @@ public class Hilo2 extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Soy el hilo "+num+" y he dormido "+vecesQueDuerme+" veces");
+        //System.out.println("Soy el hilo "+num+" y he dormido "+vecesQueDuerme+" veces");
     }
 }
