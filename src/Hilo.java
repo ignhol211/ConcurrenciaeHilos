@@ -1,35 +1,26 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.Random;
 
 public class Hilo extends Thread{
 
-    public String nombre;
+    public final int numero;
 
-    public Hilo(String nombre){
-        this.nombre=nombre;
+    public long tiempoFinalizacion;
+
+    public Hilo(int numero){
+        this.numero=numero;
     }
 
-    public static void hiloADormir(Hilo h,Long tiempoDormido) {
+    @Override
+    public void run(){
+        long comienzo=System.currentTimeMillis();
+        Random r = new Random();
         try {
-            h.start();
-            //h.run();
-            h.join();
-            //System.out.println("Soy el hilo "+h.getName()+" y me he dormido por milisegundos");
+            Thread.sleep(r.nextInt(3000));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    public static HashMap hilosOrdenados(Hilo h,Long tiempoDormido){
-        HashMap<Hilo,Long> HM = new HashMap<Hilo,Long>();
-        HM.put(h,tiempoDormido);
-        return HM;
-    }
-
-    public void run() {
-        long tiempo=System.currentTimeMillis();
-        System.out.println(tiempo);
+        tiempoFinalizacion=System.currentTimeMillis();
+        long tiempodormido = tiempoFinalizacion - comienzo;
+        System.out.println("Soy el hilo nº"+numero+" y he dormido "+tiempodormido);
     }
 }
-
