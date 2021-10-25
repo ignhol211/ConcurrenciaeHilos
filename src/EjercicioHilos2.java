@@ -37,4 +37,8 @@ public class EjercicioHilos2 {
         String result="Hilos subcampeones\n";
         return result;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a7861e0 (Sin terminar)
