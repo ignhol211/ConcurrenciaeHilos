@@ -2,26 +2,22 @@ import java.util.Random;
 
 public class Hilo extends Thread{
 
-    public final int numero;
+    public String nombre;
 
-    public long tiempoFinalizacion;
-
-    public Hilo(int numero){
-        this.numero=numero;
+    public Hilo(String nombre){
+        this.nombre=nombre;
     }
 
     @Override
     public void run(){
-        long comienzo=System.currentTimeMillis();
-        Random r = new Random();
-        try {
-            Thread.sleep(r.nextInt(3000));
+        Random r= new Random();
+        long tiempoDormido;
+        tiempoDormido=r.nextInt(3)*1000;
+        try{
+            Thread.sleep(tiempoDormido);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        tiempoFinalizacion=System.currentTimeMillis();
-        EjercicioHilos1.listaHilosOrdenada.add(this);
-        long tiempodormido = tiempoFinalizacion - comienzo;
-        System.out.println("Soy el hilo nº"+numero+" y he dormido "+tiempodormido);
     }
 }
+
