@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class EjercicioHilos2 {
 
-    static ArrayList<Hilo2> listaDeHilos = new ArrayList();
+    static ArrayList<Hilo2> listaDeHilos = new ArrayList <>();
 
     public static void main(String[] args) {
 
