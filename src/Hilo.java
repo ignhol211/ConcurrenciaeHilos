@@ -1,3 +1,4 @@
+/*
 import java.util.Random;
 
 public class Hilo extends Thread{
@@ -20,4 +21,6 @@ public class Hilo extends Thread{
         }
     }
 }
+
+ */
 

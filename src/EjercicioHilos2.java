@@ -11,8 +11,8 @@ public class EjercicioHilos2 {
             h.start();
         }
 
-        System.out.println(escribirFinalistas());
-        System.out.println(escribirSubCampeones());
+        //System.out.println(escribirFinalistas());
+        //System.out.println(escribirSubCampeones());
 
     }
 
