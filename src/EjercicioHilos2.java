@@ -12,23 +12,13 @@ public class EjercicioHilos2 {
         }
 
         System.out.println(escribirFinalistas());
-        //System.out.println(escribirSubCampeones());
+        System.out.println(escribirSubCampeones());
 
     }
 
     public static String escribirFinalistas() {
-        int MaxVecesDormido = 0;
+
         String result = "Hilos campeones\n";
-
-        for (Hilo2 hilo : listaDeHilos) {
-            if (hilo.num > MaxVecesDormido)
-                MaxVecesDormido = hilo.num;
-        }
-
-        for (Hilo2 hilo : listaDeHilos) {
-            if (hilo.num == MaxVecesDormido)
-                result += "El hilo " + hilo.num + " se ha ejecutado " + hilo.vecesQueDuerme;
-        }
 
         return result;
     }
