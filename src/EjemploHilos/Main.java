@@ -1,8 +1,10 @@
+package EjemploHilos;
+
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        /*
+
         System.out.println("Comenzamos a las "+System.currentTimeMillis());
 
         Hilo h1 = new Hilo("Hilo 1");
@@ -23,6 +25,5 @@ public class Main {
         Random r= new Random();
         return (r.nextInt(3)+2)*1000;
     }
-    */
-    }
+
 }
