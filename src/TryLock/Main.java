@@ -1,7 +1,9 @@
+package TryLock;
+
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class TryLock {
+public class Main {
 
 
     public static void main(String[] args) {
@@ -13,8 +15,8 @@ public class TryLock {
             listaJugadores.add(new Jugador("nombre = " + i + " ", lockBanio1, lockBanio2));
         }
 
-        for (Jugador jugador : listaJugadores) {
-            jugador.start();
+        for (int i = 0; i < listaJugadores.size(); i++){
+            listaJugadores.get(i).start();
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
